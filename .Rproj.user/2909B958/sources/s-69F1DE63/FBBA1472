@@ -1,0 +1,28 @@
+{
+    "id": "FBBA1472",
+    "path": null,
+    "project_path": null,
+    "type": "object_explorer",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1634745226206.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "id": "35898c6e33f242669404fc39f0d2e6a4",
+        "name": "log_attendees_distribution",
+        "title": "log_attendees_distribution",
+        "language": "R",
+        "source_window_id": "",
+        "Source": "Source"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 8030879312480528756,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1634745226206,
+    "read_only": false,
+    "read_only_alternatives": []
+}

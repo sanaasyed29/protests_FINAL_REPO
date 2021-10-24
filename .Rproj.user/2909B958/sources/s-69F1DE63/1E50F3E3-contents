@@ -1,0 +1,11 @@
+names <- read.csv("female_names.csv")
+
+name_df <- read.csv("female_names.csv")
+
+#Most popular name in 2013?
+
+colnames(name_df)
+
+name_df <- read.csv("female_names.csv")
+  
+name_2013_df <- name_df[name_df$year == 2013, ]
