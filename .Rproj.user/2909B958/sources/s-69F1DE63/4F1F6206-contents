@@ -13,6 +13,7 @@
 # Load the `stringr` package, which you'll use later.
 
 library('stringr')
+
 # Load the data from https://countlove.org/data/data.csv
 # into a variable called `protests`
  
@@ -112,12 +113,7 @@ num_in_wa
 
 # What proportion of protests occurred in Washington? `prop_in_wa`
 
-detect_Location <- function(Location){
-  locations <- str_detect(protests$Location, Location, negate = FALSE)
- prop_in_wa <- proportions(locations[locations == TRUE])
-  return(prop_in_wa)
-}
-prop_in_wa <- detect_Location("WA")
+prop_in_wa <- (num_in_wa/num_protests)
 prop_in_wa
 
 
@@ -144,38 +140,24 @@ N
 
 # Use your function above to describe the number of protests in "Washington, DC"
 # `dc_summary`
-
-dc_summary <- function(Location){
-  detect_Location <- function(Location){
-    sum(str_detect(protests$Location, Location, negate = FALSE))
-  }
-  return (paste("There were ", detect_Location(Location), " protests in ", Location))
-}
-N <- dc_summary("Washington, DC")
-N
+dc_summary <- count_in_location("Washington, DC")
+dc_summary
 
 # Use your function above to describe the number of protests in "Minneapolis"
 # `minneapolis_summary`
 
-minneapolis_summary <- function(Location){
-  detect_Location <- function(Location){
-    sum(str_detect(protests$Location, Location, negate = FALSE))
-  }
-  return (paste("There were ", detect_Location(Location), " protests in ", Location))
-}
-N <- minneapolis_summary ("Minneapolis")
-N
+minneapolis_summary <- count_in_location("Minneapolis")
+minneapolis_summary
 
 # Create a new vector `states` which is the last two characters of each
 # value in the `locations` vector. Hint, you may want to again use the
 # `stringr` package
 
-states <- c(protests$Location)
-locations = str_sub(states, -2, -1 )
-locations
+states <- str_sub(toupper(locations),-2,-1)
+states
 
 # Create a vector of the unique states in your dataset. `uniq_states`
-uniq_states <- c(unique(protests$Location))
+uniq_states <- (unique(states))
 uniq_states 
 
 # Create a summary sentence for each state by passing your `uniq_states`
@@ -275,8 +257,8 @@ count_on_date <- function(Date){
   return (paste("There were ", detect_Date(Date), " protests on ", Date))
   
 }
-N <- count_on_date("2020-05-24")
-N
+num_may_24 <- count_on_date("2020-05-24")
+num_may_24
 
 
 # Using your function you just wrote, how many protests were there on
@@ -288,8 +270,8 @@ count_on_date <- function(Date){
   return (paste("There were ", detect_Date(Date), " protests on ", Date))
   
 }
-N <- count_on_date("2020-05-31")
-N
+num_on_may_31 <- count_on_date("2020-05-31")
+num_on_may_31
 
 # For more on this timeline, see:
 # https://www.nytimes.com/article/george-floyd-protests-timeline.html
